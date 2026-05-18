@@ -1,0 +1,6 @@
+item,descripcion,cumple
+Gobernanza del modelo,Decisiones metodológicas documentadas en CONTEXTO_SESION.md,True
+Fuentes de datos con metadata,"ERA5/EVA/IDEAM/MODIS/ONI — fuente, periodo, resolución en Sección 4 del contexto",True
+Transformaciones auditables,Pipeline completo en seguro_cafe_completo.ipynb — celdas numeradas y documentadas,True
+Resultados con versión y fecha,CONTEXTO_SESION.md actualizado cada sesión con fecha y versión de resultados,True
+Criterios de activación explicitados,Umbrales P12/P88 por departamento publicados; función de pago documentada en Sección HE,True
