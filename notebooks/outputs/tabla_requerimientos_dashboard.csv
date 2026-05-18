@@ -1,0 +1,15 @@
+id,nombre,estado,cumplimiento_pct,evidencia
+N1,Validación histórica años de estrés,OK,100,validacion_historica_n1.csv
+N2,Poder predictivo R2 >= 0.70,NO CUMPLE,20,kpis_resumen.csv
+N3,Frecuencia de activación histórica,PARCIAL,60,umbrales_departamento.csv
+N4,Umbrales diferenciados por departamento,PARCIAL,70,umbrales_departamento.csv
+D1,RMSE/MAE hold-out,OK,100,d1_holdout_departamental.csv
+D2,SHAP e interpretabilidad,PARCIAL,60,shap_importancia.csv
+D3,Estabilidad temporal,NO CUMPLE,20,sección D3 del notebook
+D4,Rule-Based Index Model,PARCIAL,50,sección D4 del notebook
+F1,Pipeline reproducible,OK,100,GitHub + notebook
+F2,Completitud del panel,PARCIAL,75,f2_completitud_panel.csv
+F3,RBIM explicable,PARCIAL,55,sección D4/HE
+F4,Dashboard navegable,OK,90,dashboard
+F5,Checklist IFRS S2,OK,100,f5_checklist_ifrs_s2.csv
+F6,Open-source y datos públicos,OK,100,sección F6 del notebook
