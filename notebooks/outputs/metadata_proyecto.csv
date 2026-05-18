@@ -1,0 +1,8 @@
+campo,valor
+fecha_exportacion,2026-05-18 17:04:38
+proyecto,Seguro Agrícola Indexado de Café
+version,prototipo_modulo_3
+validacion_modelo,LOYO + hold-out temporal + validación histórica
+modelo_principal,GradientBoosting / RidgeCV / Rule-Based Index
+departamentos,"Quindio, Narino"
+fuentes_principales,"ERA5, EVA, IDEAM, MODIS, ONI, FNC"
