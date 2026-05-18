@@ -1,0 +1,3 @@
+departamento,rmse_ridge,mae_ridge,cumple_rmse_186,cumple_mae_149
+Narino,149.1,110.8,True,True
+Quindio,160.6,122.9,True,True
