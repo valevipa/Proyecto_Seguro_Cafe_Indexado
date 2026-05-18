@@ -1,0 +1,13 @@
+departamento,variable,completitud_pct,cumple_95
+Quindio,rendimiento_kg_ha,100.0,True
+Quindio,spi3_mean,100.0,True
+Quindio,spi3_min,100.0,True
+Quindio,rend_mun_media,100.0,True
+Quindio,tmedia_mean,100.0,True
+Quindio,precio_cop_carga,100.0,True
+Narino,rendimiento_kg_ha,100.0,True
+Narino,spi3_mean,100.0,True
+Narino,spi3_min,100.0,True
+Narino,rend_mun_media,100.0,True
+Narino,tmedia_mean,100.0,True
+Narino,precio_cop_carga,100.0,True
