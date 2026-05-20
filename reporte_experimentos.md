@@ -83,8 +83,8 @@
 
 | Departamento | Sequía (%) | Exceso (%) | Total eventos (%) | N3 cumple |
 |-------------|-----------|-----------|------------------|-----------|
-| Nariño | Ver outputs | Ver outputs | 15–25% objetivo | ✅ |
-| Quindío | Ver outputs | Ver outputs | 15–25% objetivo | ✅ |
+| Nariño | Ver outputs | Ver outputs | 15–25% objetivo | OK |
+| Quindío | Ver outputs | Ver outputs | 15–25% objetivo | OK |
 
 #### Umbrales calibrados P12/P88 (N4)
 
@@ -99,8 +99,8 @@
 
 | Departamento | 2012 (roya) | 2015 (El Niño) | N1 cumple |
 |-------------|------------|---------------|----------|
-| Nariño | Detectado | Detectado | ✅ |
-| Quindío | Detectado | Detectado | ✅ |
+| Nariño | Detectado | Detectado | OK |
+| Quindío | Detectado | Detectado | OK |
 
 #### Clasificadores LOYO (Track A)
 
@@ -117,15 +117,15 @@
 
 | Departamento | Modelo | R² LOYO | RMSE LOYO (kg/ha) | N2 (≥0.70) |
 |-------------|--------|---------|------------------|-----------|
-| Quindío | RidgeCV / GradBoost | Ver notebook | Ver notebook | ⚠️ |
-| Nariño | RidgeCV / GradBoost | Ver notebook | Ver notebook | ⚠️ |
+| Quindío | RidgeCV / GradBoost | Ver notebook | Ver notebook | NO CUMPLE |
+| Nariño | RidgeCV / GradBoost | Ver notebook | Ver notebook | NO CUMPLE |
 
 #### N2 honesto — in-sample sin efectos fijos municipales (2007–2024)
 
 | Departamento | n obs | Features SHAP | GradBoost R² | Ridge R² | N2 |
 |-------------|-------|--------------|-------------|---------|-----|
-| Quindío | ~216 | 7 | **0.921** | Ver notebook | ✅ |
-| Nariño | ~706 | 9 | **0.618** | Ver notebook | ⚠️ |
+| Quindío | ~216 | 7 | **0.921** | Ver notebook | OK |
+| Nariño | ~706 | 9 | **0.618** | Ver notebook | NO CUMPLE |
 
 **Nota:** R² Quindío supera umbral 0.70 sin efectos fijos. R² Nariño limitado por varianza de roya 2012–2014 y heterogeneidad de 45 municipios.
 
@@ -133,8 +133,8 @@
 
 | Departamento | Modelo | RMSE (kg/ha) | MAE (kg/ha) | D1 (≤149) |
 |-------------|--------|-------------|------------|----------|
-| Nariño | RidgeCV | ~149 | Ver notebook | ⚠️ Límite |
-| Quindío | RidgeCV | ~160 | Ver notebook | ⚠️ No cumple |
+| Nariño | RidgeCV | ~149 | Ver notebook | Límite |
+| Quindío | RidgeCV | ~160 | Ver notebook | No cumple |
 
 **Diagnóstico:** 2019 fue año atípico (recuperación post-roya + precios FNC favorables). Con n=2 años de test, el RMSE es sensible a shocks no climáticos estructurales.
 
@@ -142,8 +142,8 @@
 
 | Departamento | Variable top-1 | Variable top-2 | Variable top-3 | D2 |
 |-------------|---------------|---------------|---------------|-----|
-| Quindío | `rend_mun_media` | ONI/precio | `spi3_floracion` | ✅ |
-| Nariño | `rend_mun_media` | ONI/roya | `spi3_desarrollo` | ✅ |
+| Quindío | `rend_mun_media` | ONI/precio | `spi3_floracion` | OK |
+| Nariño | `rend_mun_media` | ONI/roya | `spi3_desarrollo` | OK |
 
 SPI-3 aparece en top-3 variables en ambos departamentos. Coherente con literatura Cenicafé: la ventana de floración/desarrollo es crítica para el rendimiento final.
 
@@ -151,8 +151,8 @@ SPI-3 aparece en top-3 variables en ambos departamentos. Coherente con literatur
 
 | Departamento | ΔR² (max-min) | std(R²) | D3 (ΔR²<0.15) |
 |-------------|--------------|---------|--------------|
-| Quindío | >1.0 | >0.60 | ❌ |
-| Nariño | >1.0 | >0.60 | ❌ |
+| Quindío | >1.0 | >0.60 | NO CUMPLE |
+| Nariño | >1.0 | >0.60 | NO CUMPLE |
 
 **Causa raíz:** Ruptura estructural por epidemia de roya 2012–2014. Rendimiento promedio cae ~15% durante la epidemia; `rend_mun_media` calculado en períodos pre/post-roya sobreestima el rendimiento en folds de test durante la epidemia → residuos grandes → R² negativo en algunos folds.
 
@@ -162,8 +162,8 @@ SPI-3 aparece en top-3 variables en ambos departamentos. Coherente con literatur
 
 | Departamento | GradBoost R² (en-muestra) | RBIM R² | ΔR² | D4 |
 |-------------|--------------------------|---------|-----|-----|
-| Nariño | Calculado | Calculado | ~0.16 | ✅ Tolerable |
-| Quindío | Calculado | Calculado | ~0.59 | ⚠️ Alta pérdida |
+| Nariño | Calculado | Calculado | ~0.16 | Tolerable |
+| Quindío | Calculado | Calculado | ~0.59 | Alta pérdida |
 
 **Fórmula RBIM:**
 ```
@@ -191,12 +191,12 @@ adj  = 0.03×SPI_fl + 0.05×SPI_de + 0.02×SPI_co + 0.04×clip(SPI_min,-3,0) - 0
 
 | ID | Descripción | Estado |
 |----|------------|--------|
-| F1 | Pipeline reproducible (notebook + GitHub) | ✅ OK |
-| F2 | Completitud del panel (variables críticas ≥95%) | ⚠️ Parcial |
-| F3 | RBIM explicable y auditable | ⚠️ Parcial |
-| F4 | Dashboard navegable (exports CSV) | ✅ OK |
-| F5 | Checklist IFRS S2 (5/5 ítems) | ✅ OK |
-| F6 | Sin dependencias comerciales | ✅ OK |
+| F1 | Pipeline reproducible (notebook + GitHub) | OK |
+| F2 | Completitud del panel (variables críticas ≥95%) | Parcial |
+| F3 | RBIM explicable y auditable | Parcial |
+| F4 | Dashboard navegable (exports CSV) | OK |
+| F5 | Checklist IFRS S2 (5/5 ítems) | OK |
+| F6 | Sin dependencias comerciales | OK |
 
 ---
 
@@ -204,18 +204,18 @@ adj  = 0.03×SPI_fl + 0.05×SPI_de + 0.02×SPI_co + 0.04×clip(SPI_min,-3,0) - 0
 
 | ID | Nombre | Estado | Cumplimiento (%) | Evidencia |
 |----|--------|--------|-----------------|-----------|
-| N1 | Validación histórica años de estrés | ✅ OK | 100% | `validacion_historica_n1.csv` |
-| N2 | Poder predictivo R²≥0.70 | ⚠️ Parcial | 60% | `kpis_resumen.csv` |
-| N3 | Frecuencia activación 15–25% | ✅ OK | 90% | `umbrales_departamento.csv` |
-| N4 | Umbrales diferenciados por depto | ⚠️ Parcial | 70% | `umbrales_departamento.csv` |
-| D1 | RMSE/MAE hold-out | ⚠️ Parcial | 70% | `d1_holdout_departamental.csv` |
-| D2 | SHAP e interpretabilidad | ✅ OK | 95% | `shap_importancia.csv` |
-| D3 | Estabilidad temporal | ❌ No cumple | 20% | Sección D3 notebook |
-| D4 | Rule-Based Index Model | ⚠️ Parcial | 50% | Sección D4 notebook |
-| F1 | Pipeline reproducible | ✅ OK | 100% | GitHub + notebook |
-| F2 | Completitud del panel | ⚠️ Parcial | 75% | `f2_completitud_panel.csv` |
-| F5 | Checklist IFRS S2 | ✅ OK | 100% | `f5_checklist_ifrs_s2.csv` |
-| F6 | Open-source y datos públicos | ✅ OK | 100% | Sección F6 notebook |
+| N1 | Validación histórica años de estrés | OK | 100% | `validacion_historica_n1.csv` |
+| N2 | Poder predictivo R²≥0.70 | Parcial | 60% | `kpis_resumen.csv` |
+| N3 | Frecuencia activación 15–25% | OK | 90% | `umbrales_departamento.csv` |
+| N4 | Umbrales diferenciados por depto | Parcial | 70% | `umbrales_departamento.csv` |
+| D1 | RMSE/MAE hold-out | Parcial | 70% | `d1_holdout_departamental.csv` |
+| D2 | SHAP e interpretabilidad | OK | 95% | `shap_importancia.csv` |
+| D3 | Estabilidad temporal | No cumple | 20% | Sección D3 notebook |
+| D4 | Rule-Based Index Model | Parcial | 50% | Sección D4 notebook |
+| F1 | Pipeline reproducible | OK | 100% | GitHub + notebook |
+| F2 | Completitud del panel | Parcial | 75% | `f2_completitud_panel.csv` |
+| F5 | Checklist IFRS S2 | OK | 100% | `f5_checklist_ifrs_s2.csv` |
+| F6 | Open-source y datos públicos | OK | 100% | Sección F6 notebook |
 
 ---
 
