@@ -67,7 +67,7 @@
 | **Criterio** | El SPI-3 detecta correctamente los dos años de estrés histórico documentados (2012 roya, 2015 El Niño) en ambos departamentos |
 | **Puntaje máximo** | 10 pts |
 | **Evidencia** | `outputs/validacion_historica_n1.csv` · Celda 2.6 del notebook |
-| **Resultado** | 2012: detectado en Quindío y Nariño ✅ · 2015: detectado en Quindío y Nariño ✅ |
+| **Resultado** | 2012: detectado en Quindío y Nariño · 2015: detectado en Quindío y Nariño |
 | **Puntaje asignado** | **10 / 10** |
 | **Justificación** | Cumplimiento completo. El índice identifica correctamente ambos eventos con ≥1 mes de sequía o exceso en el año |
 
@@ -80,7 +80,7 @@
 | **Criterio** | Frecuencia total de eventos (sequía + exceso) entre 15% y 25% del total de meses |
 | **Puntaje máximo** | 10 pts |
 | **Evidencia** | `outputs/umbrales_departamento.csv` · Celda 2.3 |
-| **Resultado** | Quindío: dentro del rango ✅ · Nariño: dentro del rango ✅ |
+| **Resultado** | Quindío: dentro del rango · Nariño: dentro del rango |
 | **Puntaje asignado** | **9 / 10** |
 | **Justificación** | Se descuenta 1 pt por no presentar el análisis de sensibilidad de la prima actuarial ante variaciones de ±2 pp en la frecuencia |
 
@@ -95,8 +95,8 @@
 | **Criterio** | R² ≥ 0.70 en validación LOYO o in-sample sin efectos fijos, para al menos un departamento |
 | **Puntaje máximo** | 20 pts |
 | **Evidencia** | `outputs/kpis_resumen.csv` · Celdas 3.4 y 3.7b |
-| **Resultado Quindío** | R²=0.921 (GradBoost in-sample sin FE, pool 22 features, 2007-2024) ✅ |
-| **Resultado Nariño** | R²=0.618 (GradBoost in-sample sin FE) — no alcanza umbral 0.70 ⚠️ |
+| **Resultado Quindío** | R²=0.921 (GradBoost in-sample sin FE, pool 22 features, 2007-2024) |
+| **Resultado Nariño** | R²=0.618 (GradBoost in-sample sin FE) — no alcanza umbral 0.70 |
 | **Fortalezas** | Anti-leakage correcto en `rend_mun_media` (calculado solo con datos de entrenamiento por fold). Comparación de 3 modelos por departamento. Selección SHAP del subconjunto óptimo de features |
 | **Limitaciones** | Nariño limitado por ruptura roya 2012–2014 y alta varianza de 45 municipios |
 | **Puntaje asignado** | **15 / 20** |
@@ -111,9 +111,9 @@
 | **Criterio** | RMSE ≤ 149 kg/ha en hold-out 2018–2019 a nivel departamental ponderado |
 | **Puntaje máximo** | 10 pts |
 | **Evidencia** | `outputs/d1_holdout_departamental.csv` · Celda 6 (D1) |
-| **Resultado Nariño** | RMSE ~149 kg/ha (RidgeCV) — en el límite del umbral ⚠️ |
-| **Resultado Quindío** | RMSE ~160 kg/ha — supera el umbral ⚠️ |
-| **Diagnóstico presentado** | 2019 fue año atípico (recuperación post-roya + precios FNC favorables). Con n=2 test, el RMSE es sensible a shocks no climáticos ✅ |
+| **Resultado Nariño** | RMSE ~149 kg/ha (RidgeCV) — en el límite del umbral |
+| **Resultado Quindío** | RMSE ~160 kg/ha — supera el umbral |
+| **Diagnóstico presentado** | 2019 fue año atípico (recuperación post-roya + precios FNC favorables). Con n=2 test, el RMSE es sensible a shocks no climáticos |
 | **Puntaje asignado** | **7 / 10** |
 | **Justificación** | No cumplimiento estricto del umbral, pero diagnóstico técnico riguroso y aceptable dado el contexto estructural del período de test |
 
@@ -126,8 +126,8 @@
 | **Criterio** | Análisis SHAP con coherencia agronómica: SPI-3 desarrollo/floración debe aparecer en top-3 variables climáticas |
 | **Puntaje máximo** | 10 pts |
 | **Evidencia** | `outputs/shap_importancia.csv` · `outputs/validacion_shap_d2.png` · Celda D2 |
-| **Resultado** | `rend_mun_media` domina ambos departamentos (efecto fijo) ✅. `spi3_floracion` y/o `spi3_desarrollo` en top-3 climáticas ✅ |
-| **Coherencia agronómica** | Floración (abr-may, oct-nov) y desarrollo del fruto (may-ago) son períodos críticos documentados en literatura Cenicafé ✅ |
+| **Resultado** | `rend_mun_media` domina ambos departamentos (efecto fijo). `spi3_floracion` y/o `spi3_desarrollo` en top-3 climáticas |
+| **Coherencia agronómica** | Floración (abr-may, oct-nov) y desarrollo del fruto (may-ago) son períodos críticos documentados en literatura Cenicafé |
 | **Puntaje asignado** | **9 / 10** |
 | **Justificación** | Se descuenta 1 pt por no incluir PDP (Partial Dependence Plots) para las top-3 variables, que habría completado el análisis D2 |
 
@@ -140,8 +140,8 @@
 | **Criterio** | ΔR² (max-min) < 0.15 · std(R²) < 0.10 en k-fold temporal (k=4, 2 años/fold) |
 | **Puntaje máximo** | 10 pts |
 | **Evidencia** | Celda D3 del notebook |
-| **Resultado** | Quindío: ΔR²>1.0, std>0.60 ❌ · Nariño: ΔR²>1.0, std>0.60 ❌ |
-| **Diagnóstico presentado** | Ruptura estructural documentada con estadísticas por período: pre-roya (2007-2011), roya (2012-2014), post-roya (2015-2024). Leakage de `rend_mun_media` identificado y corregido ✅ |
+| **Resultado** | Quindío: ΔR²>1.0, std>0.60 · Nariño: ΔR²>1.0, std>0.60 |
+| **Diagnóstico presentado** | Ruptura estructural documentada con estadísticas por período: pre-roya (2007-2011), roya (2012-2014), post-roya (2015-2024). Leakage de `rend_mun_media` identificado y corregido |
 | **Puntaje asignado** | **5 / 10** |
 | **Justificación** | No cumple el criterio cuantitativo. Sin embargo, el diagnóstico causal completo (roya como break-point estructural) y la corrección del leakage merecen crédito parcial. El criterio es formalmente incumplible sin modelar la ruptura estructural explícitamente |
 
@@ -155,7 +155,7 @@
 | **Puntaje máximo** | 10 pts |
 | **Evidencia** | Celda D4 del notebook |
 | **Fórmula documentada** | `Pred = rend_mun_media × clip(1 + adj, 0.30, 1.50)` con coeficientes SPI por ventana fenológica y factor roya |
-| **Resultado** | Nariño: ΔR²≈0.16 ✅ · Quindío: ΔR²≈0.59 ⚠️ |
+| **Resultado** | Nariño: ΔR²≈0.16 · Quindío: ΔR²≈0.59 |
 | **Puntaje asignado** | **7 / 10** |
 | **Justificación** | Nariño cumple (tolerable). Quindío no cumple pero la fórmula está correctamente documentada y la discusión sobre limitaciones es rigurosa. Se descuentan 3 pts por incumplimiento en Quindío |
 
@@ -185,7 +185,7 @@
 | **Criterio** | Checklist IFRS S2: 5/5 ítems cumplidos |
 | **Puntaje máximo** | 10 pts |
 | **Evidencia** | `outputs/f5_checklist_ifrs_s2.csv` · Celda F5 |
-| **Ítems IFRS S2** | ✅ Gobernanza · ✅ Fuentes con metadata · ✅ Transformaciones auditables · ✅ Resultados con versión/fecha · ✅ Criterios de activación explicitados |
+| **Ítems IFRS S2** | Gobernanza · Fuentes con metadata · Transformaciones auditables · Resultados con versión/fecha · Criterios de activación explicitados |
 | **Puntaje asignado** | **10 / 10** |
 | **Justificación** | Cumplimiento completo de los 5 ítems |
 
