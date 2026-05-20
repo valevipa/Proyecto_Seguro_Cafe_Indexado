@@ -1,10 +1,10 @@
 # Rúbrica Diligenciada — Anexo de Evaluación
-## Seguro Agrícola Indexado de Café (Módulo 2)
+## Seguro Agrícola Indexado de Café
 
 **Proyecto:** Seguro Indexado Café — Quindío y Nariño  
 **Versión:** prototipo_modulo_3  
 **Notebook:** `seguro_cafe_completo_vf.ipynb`  
-**Fecha de diligenciamiento:** 2024
+**Fecha de diligenciamiento:** 2026
 
 ---
 
