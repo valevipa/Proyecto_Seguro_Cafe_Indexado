@@ -208,31 +208,3 @@
 | **D4** Reproducibilidad | R-01 Pipeline F1/F6 | 10 | 9 | 90% |
 | **D4** Reproducibilidad | R-02 Estándares F5 | 10 | 10 | 100% |
 | | **TOTAL** | **145** | **120** | **83%** |
-
----
-
-## Observaciones del evaluador (espacio para completar)
-
-**Fortalezas del proyecto:**
-- Pipeline ETL bien estructurado con manejo robusto de fuentes heterogéneas
-- Implementación correcta de SPI-3 con validación estadística formal (KS-test)
-- Diagnósticos técnicos rigurosos cuando los criterios no se cumplen (D1, D3)
-- Anti-leakage correcto en `rend_mun_media` por fold
-- Análisis SHAP con interpretación agronómica pertinente
-- 100% open-source con datos públicos
-
-**Áreas de mejora:**
-- Completar PDP para las top-3 variables SHAP (requerimiento D2)
-- Justificar formalmente la elección de P12 con criterio actuarial
-- Corregir rutas de guardado de figuras para portabilidad fuera de Google Colab
-- Modelar break-point estructural de roya para mejorar D3
-- Ampliar período hold-out (n=2 años es insuficiente para estimación robusta de RMSE)
-
-**Comentarios adicionales:**
-_[Espacio para el evaluador]_
-
----
-
-**Firma evaluador:** ____________________________  
-**Fecha de evaluación:** ____________________________  
-**Calificación final:** ____________________________
