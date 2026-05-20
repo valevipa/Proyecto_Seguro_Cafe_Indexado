@@ -1,8 +1,36 @@
-pandas>=2.0
-numpy>=1.24
-scipy>=1.10
-scikit-learn>=1.2
-matplotlib>=3.7
-yfinance>=0.2
-shap>=0.50
-pygam>=0.11
+# Seguro Agrícola Indexado de Café — Quindío y Nariño
+# requirements.txt
+# Python >= 3.9 recomendado
+# Instalación: pip install -r requirements.txt
+
+# ── Manipulación de datos ────────────────────────────────
+numpy>=1.24.0
+pandas>=2.0.0
+openpyxl>=3.1.0          # Leer archivos .xlsx (IDEAM, FNC precios)
+
+# ── Visualización ────────────────────────────────────────
+matplotlib>=3.7.0
+
+# ── Machine Learning ─────────────────────────────────────
+scikit-learn>=1.3.0       # Ridge, RidgeCV, RandomForest, GradientBoosting,
+                          # StandardScaler, métricas
+
+# ── Estadística y distribuciones ─────────────────────────
+scipy>=1.11.0             # gamma_dist, norm_dist, kstest, mannwhitneyu,
+                          # ks_2samp, pearsonr, shapiro, jarque_bera,
+                          # spearmanr
+
+# ── Interpretabilidad ────────────────────────────────────
+shap>=0.43.0              # TreeExplainer, SHAP values (secciones D2, 3.7)
+
+# ── Modelos estadísticos avanzados ───────────────────────
+statsmodels>=0.14.0       # durbin_watson, variance_inflation_factor
+
+# ── Fuentes de datos opcionales ──────────────────────────
+yfinance>=0.2.0           # Precios NYMEX KC=F (opcional — el notebook usa
+                          # precios FNC como fuente principal)
+requests>=2.31.0          # Descarga de archivos desde GitHub raw
+
+# ── Entorno Jupyter ──────────────────────────────────────
+jupyter>=1.0.0
+ipykernel>=6.25.0
