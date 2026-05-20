@@ -1,6 +1,6 @@
 # Seguro Agrícola Indexado de Café — Quindío y Nariño
 
-**Módulo 2 · Modelamiento Climatico-Agrícola · 2024**
+**Modelamiento Climatico-Agrícola · 2026**
 
 ---
 
