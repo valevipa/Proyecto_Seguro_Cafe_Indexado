@@ -2,7 +2,7 @@
 ## Seguro Agrícola Indexado de Café — Quindío y Nariño
 
 **Versión:** prototipo_modulo_3  
-**Fecha:** 2024  
+**Fecha:** 2026  
 **Pipeline:** `seguro_cafe_completo_vf.ipynb`
 
 ---
