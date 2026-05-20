@@ -112,10 +112,10 @@ Los gráficos (`.png`) se guardan en el directorio de trabajo.
 
 | Requerimiento | Criterio | Resultado | Estado |
 |--------------|---------|-----------|--------|
-| **N1** Validación histórica | Detectar 2012 (roya) y 2015 (El Niño) | Ambos años detectados en ambos departamentos | ✅ OK |
-| **N2** Poder predictivo | R² ≥ 0.70 in-sample | Quindío: 0.921 · Nariño: 0.618 | ⚠️ Parcial |
-| **N3** Frecuencia activación | 15%–25% de meses | Dentro del rango actuarial objetivo | ✅ OK |
-| **N4** Calibración umbrales | Percentiles empíricos P12/P88 | Ajustados por departamento con prueba Mann-Whitney | ✅ OK |
+| **N1** Validación histórica | Detectar 2012 (roya) y 2015 (El Niño) | Ambos años detectados en ambos departamentos | OK |
+| **N2** Poder predictivo | R² ≥ 0.70 in-sample | Quindío: 0.921 · Nariño: 0.618 | Parcial |
+| **N3** Frecuencia activación | 15%–25% de meses | Dentro del rango actuarial objetivo | OK |
+| **N4** Calibración umbrales | Percentiles empíricos P12/P88 | Ajustados por departamento con prueba Mann-Whitney | OK |
 
 **Umbrales calibrados:**
 - Nariño: sequía SPI-3 ≤ -0.827 · exceso SPI-3 ≥ +P88
@@ -125,10 +125,10 @@ Los gráficos (`.png`) se guardan en el directorio de trabajo.
 
 | Requerimiento | Criterio | Resultado | Estado |
 |--------------|---------|-----------|--------|
-| **D1** RMSE hold-out | ≤ 149 kg/ha (nivel departamental) | Nariño: ~149 · Quindío: ~160 kg/ha | ⚠️ Límite |
-| **D2** Coherencia SHAP | SPI-3 desarrollo en top-3 variables | ✅ Confirmado en ambos departamentos | ✅ OK |
-| **D3** Estabilidad temporal | ΔR² < 0.15 · std < 0.10 | ΔR² > 1.0 por ruptura estructural roya 2012–2014 | ❌ No cumple |
-| **D4** RBIM vs estadístico | ΔR² tolerable | Nariño ΔR²=0.16 · Quindío ΔR²=0.59 | ⚠️ Parcial |
+| **D1** RMSE hold-out | ≤ 149 kg/ha (nivel departamental) | Nariño: ~149 · Quindío: ~160 kg/ha | Límite |
+| **D2** Coherencia SHAP | SPI-3 desarrollo en top-3 variables | Confirmado en ambos departamentos | OK |
+| **D3** Estabilidad temporal | ΔR² < 0.15 · std < 0.10 | ΔR² > 1.0 por ruptura estructural roya 2012–2014 | No cumple |
+| **D4** RBIM vs estadístico | ΔR² tolerable | Nariño ΔR²=0.16 · Quindío ΔR²=0.59 | Parcial |
 
 **Nota D3:** La inestabilidad proviene del choque endógeno de la roya (2012–2014), no del modelo climático. El SPI-3 captura ~25% de la varianza del rendimiento; el resto corresponde a precio FNC y fitosanidad.
 
